@@ -970,7 +970,7 @@ namespace Mem {
 						out += Mv::to(y + 1 + cy, x + 1 + cx) + (big_disk ? " Used:" + rjust(to_string(disk.used_percent) + '%', 4) : "U") + ' '
 							+ disk_meters_used.at(mount)(disk.used_percent) + rjust(human_used, (big_disk ? 9 : 5));
 						cy++;
-						if (cmp_less_equal(disks.size() * 4 + (show_io_stat ? disk_ios : 0), height - 1)) cy++;
+						if (cmp_less_equal(disks.size() * 4 + disk_ios, height - 1)) cy++;
 					}
 
 				}
